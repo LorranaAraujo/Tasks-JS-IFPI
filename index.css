@@ -1,0 +1,88 @@
+body {
+    padding: 0;
+    margin:0;
+    font-family: cursive;
+}
+
+header{
+    background-color: rgb(73, 175, 73);
+    color: lightgoldenrodyellow;
+    padding: 20px;
+    text-align: center;
+    text-shadow:green;
+}
+
+h1{
+    margin:0;
+}
+
+
+.container {
+    max-width: 880px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input[type="text"],
+    select {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(199, 195, 195);
+        font-size: 16px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+button[type="button"] {
+    padding: 10px 20px;
+    background-color: rgb(68, 124, 68);
+    color: lightgoldenrodyellow;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor:pointer;
+    transition: background-color 0.2s ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button[type="button"]:hover {
+    background-color: rgb(10, 86, 10);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    margin-top:20px ;
+
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid rgb(199, 195, 195);
+    text-align: center;
+}
+
+th {
+    background-color: rgb(73, 175, 73);
+    color: lightgoldenrodyellow;
+}
+
+select {font-family: Georgia, 'Times New Roman', Times, serif;}
+
+
+.botao{
+    padding: 10px 20px;
+    background-color: rgb(68, 124, 68);
+    color: lightgoldenrodyellow;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor:pointer;
+    transition: background-color 0.2s ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

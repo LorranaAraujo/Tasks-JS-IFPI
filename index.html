@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Tasks</title>
+</head>
+<body>
+    <header>
+        <h1>Tasks</h1>
+    </header>
+    <div class="container">
+        <form>
+            <label for="descricao">Drescrição:</label>
+            <input type="text" placeholder="Adicionar descrição" autocomplete="off" id="descricao">
+            <label for="responsavel">Responsável</label>
+            <input type="text" placeholder="Adicione um responsável" autocomplete="off" id="responsavel">
+            <label for="nivel">Nível:</label>
+            <select id = "nivel">
+                <option value="1">1</opition>
+                <option value="3">3</opition>
+                <option value="5">5</opition>
+                <option value="8">8</opition>
+            </select>
+            <label for="situacao">Situação:</label>
+            <select id = "situacao">
+                <option value="nova">Nova</opition>
+                <option value="em andamento">Em andamento</opition>
+                <option value="pendente">Pendente</opition>
+                <option value="cancelada">Cancelada</opition>
+                <option value="resolvida">Resolvida</option>
+            </select>
+            <label for="prioridade">Prioridade:</label>
+            <select id="prioridade">
+
+                <option value="1">1</opition>
+                <option value="2">2</opition>
+                <option value="3">3</opition>
+
+            </select>
+
+
+            <button type="button" onclick="CriarTarefa()">Criar tarefa</button>
+            <button type="button" onclick="MostrarTarefas()">Mostrar Tarefas</button>
+        </form>
+        <table id="Tabela-Tarefas">
+            
+        </table>
+    </div>
+</body>
+</html>
