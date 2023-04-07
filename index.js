@@ -92,14 +92,14 @@ async function MostrarTarefas(){
 
 
 async function DeletarTask(id) {
-    const response = await fetch (`${api_url}  ${id} `, {
+    const response = await fetch (`${api_url}${id} `, {
         method: 'DELETE',
         headers : {
             'Content-Type':'application/json'
         }
     });
 
-    if (response.status === 200) {
+    if (response.status === 204) {
 
         console.log("Tarefa excluída com sucesso");
     } else {
