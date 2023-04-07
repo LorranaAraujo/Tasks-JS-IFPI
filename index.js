@@ -1,4 +1,4 @@
-const api_url = 'http://127.0.0.1:8000/tasks/'
+const api_url = 'https://task-db.onrender.com/tasks/'
 
 async function obterTarefas() {
     const response = await fetch(api_url);
