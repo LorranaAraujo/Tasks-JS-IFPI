@@ -1,11 +1,11 @@
 body {
     padding: 0;
     margin:0;
-    font-family: cursive;
+    font-family:calc();
 }
 
 header{
-    background-color: rgb(73, 175, 73);
+    background-color:  #067a0d; 
     color: lightgoldenrodyellow;
     padding: 20px;
     text-align: center;
@@ -34,19 +34,19 @@ input[type="text"],
         border-radius: 5px;
         border: 1px solid rgb(199, 195, 195);
         font-size: 16px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family:'Lucida Sans Unicode';
     }
 
 button[type="button"] {
     padding: 10px 20px;
-    background-color: rgb(68, 124, 68);
+    background-color: #20700ad6;
     color: lightgoldenrodyellow;
     border: none;
     border-radius: 5px;
     font-size: 15px;
     cursor:pointer;
     transition: background-color 0.2s ease;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Arial Narrow Bold';
 }
 
 button[type="button"]:hover {
@@ -68,21 +68,46 @@ td {
 }
 
 th {
-    background-color: rgb(73, 175, 73);
+    background-color: rgb(10, 83, 10);
     color: lightgoldenrodyellow;
 }
 
-select {font-family: Georgia, 'Times New Roman', Times, serif;}
+select {font-family: Georgia;}
 
 
 .botao{
     padding: 10px 20px;
-    background-color: rgb(68, 124, 68);
+    background-color: rgb(10, 83, 10);
     color: lightgoldenrodyellow;
     border: none;
     border-radius: 5px;
     font-size: 15px;
     cursor:pointer;
     transition: background-color 0.2s ease;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Helvetica;
+}
+
+
+.por_label{
+    font-family: Cochin;
+
+}
+
+
+.sao_inputs{
+    padding: 8px;
+    border-radius: 4px;
+    font-style: oblique;
+    
+}
+
+.como_assim{
+    background-color: darkgreen;
+    margin-top: 16px;
+    padding: 8px;
+    color: antiquewhite;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
 }
