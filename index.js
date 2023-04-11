@@ -83,7 +83,7 @@ async function MostrarTarefas(){
         BotaoEditar.innerText = 'Editar'
         BotaoEditar.classList.add('botao')
         BotaoEditar.addEventListener('click',()=>{
-            EditarTasks(task_atual.id)
+            AtualizarTasks(task_atual.id)
         })
         row.insertCell().appendChild(BotaoEditar)
         
@@ -111,22 +111,69 @@ async function DeletarTask(id) {
 
 
 
-async function EditarTasks(id) {
-    const NovaTarefa = prompt('Digite a nova situação')
-    const TarefaAtualizada = {
-        situacao:NovaTarefa
-    } 
-    const response = await fetch (`${api_url}${id}/${TarefaAtualizada.situacao}`,{
-        method : 'PUT',
-        headers : {
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify(NovaTarefa)
-    })
-    if (response.status === 200) {
-        console.log("Tarefa Alterada")
-        MostrarTarefas()
-    } else {
-        console.log('Erro')
+async function AtualizarTasks(id) {
+    const tarefa = await obterTarefa(id);
+  
+    const form = document.createElement("form");
+  
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const novaTarefa = Object.fromEntries(formData.entries());
+      const response = await atualizarTask(id, novaTarefa);
+      if (response.status === 200) {
+        console.log("Tarefa atualizada com sucesso");
+        MostrarTarefas();
+      } else {
+        console.log("Erro ao atualizar tarefa");
+      }
+  
+      form.remove();
+    });
+  
+  
+    for (const [campo, valor] of Object.entries(tarefa)) {
+      if (campo === "id") {
+        continue;
+      }
+      const label = document.createElement("label");
+      label.innerText = campo;
+      label.classList.add("por_label"); 
+      const input = document.createElement("input");
+      input.setAttribute("name", campo);
+      input.setAttribute("value", valor);
+      input.classList.add("sao_inputs"); 
+      form.appendChild(label);
+      form.appendChild(input);
     }
-}
+  
+  
+    const ConfirmarUpdate = document.createElement("button");
+    ConfirmarUpdate.innerText = "Confirmar";
+    ConfirmarUpdate.classList.add("como_assim"); 
+    form.appendChild(ConfirmarUpdate);
+  
+    // exibindo o formulário na tela
+    const container = document.getElementById("formulario");
+    container.innerHTML = "";
+    container.appendChild(form);
+  }
+  
+  async function obterTarefa(id) {
+    const response = await fetch(`${api_url}${id}`);
+    const data = await response.json();
+    return data;
+  }
+  
+  async function atualizarTask(id, tarefa) {
+    const response = await fetch(`${api_url}${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(tarefa),
+    });
+    return response;
+  }
+  
+MostrarTarefas()
