@@ -113,6 +113,7 @@ async function DeletarTask(id) {
 
 async function AtualizarTasks(id) {
     const tarefa = await obterTarefa(id);
+    //console.log(tarefa.id)
   
     const form = document.createElement("form");
   
